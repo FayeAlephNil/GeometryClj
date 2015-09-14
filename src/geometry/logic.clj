@@ -1,3 +1,14 @@
+(ns geometry.logic)
+
+(def example {:statement {:and {:statement {:a true} :conclusion {:b true}}
+  {:statement {:b true} :conclusion {:c true}}} :conclusion {:statement {:a true} {:b true}}})
+
+(def exampleL '((:and ((:a true)
+                       (:b true)) ((:b true)
+                                   (:c true)))
+                ((:a true)
+                 (:c true))))
+
 (defprotocol LogicAtom
   (not [this])
   (? [this given]))
